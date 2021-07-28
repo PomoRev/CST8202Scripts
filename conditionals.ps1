@@ -78,7 +78,7 @@ Write-Output "equality against a range of simple values - the switch (aka case) 
 Write-Output "The switch construct behaves just a bit differently than the case in other languages."
 Write-Output "Let's look at an example.`n"
 
-$myVariable = Read-Host -Prompt "Enter your favourite colour: "
+$myVariable = Read-Host -Prompt "Enter your favourite colour"
 
 # The system supports these colours: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, 
 # DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, and White
@@ -114,9 +114,17 @@ switch ($myVariable.ToLower()) {
     }
 }
 
-Write-Output "`nThen you will like this!"
-Write-Host -ForegroundColor $myVariable "The quick brown fox jumped over the slow red turtle."
+if ($myVariable -eq "white"){
 
+    Write-Output "`nWhite it is."
+
+} else {
+    
+    Write-Output "`nThen you may like this!"
+
+}
+
+Write-Host -ForegroundColor $myVariable "The quick brown fox jumped over the slow red turtle."
 Write-Output "`n"
 
 Pause
